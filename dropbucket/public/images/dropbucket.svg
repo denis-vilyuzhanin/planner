@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="744.09448"
+   height="1052.3622"
+   id="svg2">
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <path
+       d="m 314.43809,127.87764 c -84.38303,-0.0947 -230.085874,1.67308 -312.0816176,1.168 l 0,39.74793 39.9158836,0 38.779052,755.20453 c 0,43.90117 34.693862,79.4958 77.484002,79.4958 l 426.15812,0 c 42.79014,0 77.48401,-35.59463 77.48401,-79.4958 l 38.09851,-755.20453 38.17456,0 0,-39.74793 c 0,0 -168.66812,0.50509 -311.69378,0.75762 l 0.10547,39.49539 234.6347,-0.50508 -37.98737,753.14591 -0.076,1.0103 0,1.04832 c 0,21.89256 -17.36644,39.74792 -38.74201,39.74792 l -426.15816,0 c -21.33657,0 -38.742,-17.85536 -38.742,-39.74792 l 0,-1.04832 -0.0371,-1.04631 -38.703002,-753.1099 233.635382,-1.6019"
+       id="path3005"
+       style="fill:#37404d" />
+    <polyline
+       style="fill:none;stroke:#37404d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1"
+       points="30,41 25,46 20,41   "
+       stroke-miterlimit="10"
+       id="polyline3037"
+       transform="matrix(24.295997,0,0,32.654226,-227.13741,-736.21088)" />
+    <line
+       style="fill:#37404d;fill-opacity:1;stroke:#37404d;stroke-width:44.50299835;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+       stroke-miterlimit="10"
+       x1="378.57141"
+       x2="378.57141"
+       y1="80.076477"
+       y2="699.31915"
+       id="line3039" />
+  </g>
+</svg>
