@@ -56,6 +56,8 @@
     					<li><a href="#">Project Event</a></li>
     					<li><a href="#">Project Activity</a></li>
     					<li><a href="#">Project Task</a></li>
+    					<li class="divider"></li>
+    					<li><a href="#">Delete</a></li>
   					</ul>
 				</span>
 			</li>
@@ -96,6 +98,16 @@
 	<script src="js/bootstrap.js"></script>
 	
 	<!-- Dropbucket -->
-	<script data-main="js/dropbucket.js" src="js/require.js"></script>
+	<!-- <script data-main="js/dropbucket/application.js" src="js/require.js"></script> -->
+	<script src="js/require.js"></script>
+	<script src="js/config.js"></script>
+	<script>
+		requirejs(['js/dropbucket/application'], function(DropbucketApplication){
+			var application = new DropbucketApplication();
+			application.start();
+		});
+	</script>
+	
+	
 </body>
 </html>
