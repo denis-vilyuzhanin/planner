@@ -6,7 +6,12 @@ requirejs.config({
     //never includes a ".js" extension since
     //the paths config could be for a directory.
     paths: {
-    	text: '/js/text'
+    	jquery: '/js/lib/jquery',
+    	jqueryui: '/js/lib/jquery-ui',
+    	underscore: '/js/lib/underscore',
+    	backbone: '/js/lib/backbone',
+    	bootstrap: '/js/lib/bootstrap',
+    	text: '/js/lib/text'
         //model: 'dropbucket/model',
         //view: 'dropbucket/view',
         //DropbucketApplication: 'DropbucketApplication'
