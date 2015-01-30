@@ -21,17 +21,22 @@
 .dayGroup > .list-group-item {
 	border-left-width: 2px;
 	height: 55px;
+	overflow: visible;
 }
 
-.todayGroup > .list-group-item {
+.dayItem:HOVER {
+	background-color: #eee;
+}
+
+.dayGroup > .newItem {
 	border-left-color: #398439;
 }
 
-.yesterdayGroup > .list-group-item {
+.dayGroup > .yesterdayItem {
 	border-left-color: #eea236;
 }
 
-.pastdayGroup > .list-group-item{
+.dayGroup > .pastItem {
 	border-left-color: #ac2925;
 }
 
@@ -39,6 +44,8 @@
 	float: right;
 	
 }
+
+
 
 
 
