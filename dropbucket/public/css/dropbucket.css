@@ -1,7 +1,23 @@
 @CHARSET "UTF-8";
 
-.mainInput > .form-control,
-.mainInput > .input-group-btn > .btn {
+.pageHeader {
+	width: 100%;
+	background-color: #eee;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+.dropIdea {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.dropIdea > .mainInput > .form-control,
+.dropIdea > .mainInput > .input-group-btn > .btn {
 	height: 60px;
  	font-size: 30px;
+}
+
+.dayGroup {
+	/* margin-left: 60px; */
 }
