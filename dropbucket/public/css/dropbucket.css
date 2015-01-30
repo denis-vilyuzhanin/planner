@@ -18,6 +18,27 @@
  	font-size: 30px;
 }
 
-.dayGroup {
-	/* margin-left: 60px; */
+.dayGroup > .list-group-item {
+	border-left-width: 2px;
+	height: 55px;
 }
+
+.todayGroup > .list-group-item {
+	border-left-color: #398439;
+}
+
+.yesterdayGroup > .list-group-item {
+	border-left-color: #eea236;
+}
+
+.pastdayGroup > .list-group-item{
+	border-left-color: #ac2925;
+}
+
+.todayGroup > .list-group-item > .resolutionButton {
+	float: right;
+	
+}
+
+
+
