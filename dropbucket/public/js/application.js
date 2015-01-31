@@ -1,15 +1,20 @@
 
-define(['./view/ApplicationView'], function(ApplicationView){
-	var DEPENDENCIES = ['jquery', 'bootstrap', 'underscore', 'backbone'];
+
+define(['./view/ApplicationView', 
+        'jquery', 
+        'bootstrap', 
+        'underscore', 
+        'backbone'], 
+		function(ApplicationView){
+	
 	function DropbucketApplication() {
-		
+		this._view;
 	}
 	DropbucketApplication.prototype.start = function(){
 		console.log('Dropbucket starting ...');
-		requirejs(DEPENDENCIES, function(){
-			ApplicationView.show();
-			console.log('Dropbucket ready');
-		})
+		this._view = new ApplicationView();
+		this._view.render();
+		console.log('Dropbucket is running');
 	}
 	
 	return DropbucketApplication;

@@ -6,6 +6,7 @@ requirejs.config({
     //never includes a ".js" extension since
     //the paths config could be for a directory.
     paths: {
+    	
     	jquery: '/js/lib/jquery',
     	jqueryui: '/js/lib/jquery-ui',
     	underscore: '/js/lib/underscore',
