@@ -5,6 +5,9 @@ define(['../component/DropItPanelComponent', 'text!dropbucket.view.html'],
 		initialize: function() {
 			this.setElement($('body'));
 			this.dropItPanel = new DropItPanelComponent();
+			this.dropItPanel.onDroppedItem(function(msg){
+				alert(msg);
+			});
 		},
 		render: function() {
 			this.$el.html(template);
