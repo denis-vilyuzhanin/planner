@@ -18,34 +18,33 @@
  	font-size: 30px;
 }
 
-.dayGroup > .list-group-item {
-	border-left-width: 2px;
+
+
+
+.droppedItems > .list-group-item {
+	border-left-width: 5px;
 	height: 55px;
 	overflow: visible;
+	border-left-color: #eee;
 }
 
-.dayItem:HOVER {
+.droppedItems > .list-group-item:HOVER {
 	background-color: #eee;
 }
 
-.dayGroup > .newItem {
+.droppedItems .resolutionButton {
+	float: right;
+}
+
+.todayDroppedItems > .unresolved {
 	border-left-color: #398439;
 }
 
-.dayGroup > .yesterdayItem {
+.yesterdayDroppedItems > .unresolved {
 	border-left-color: #eea236;
 }
 
-.dayGroup > .pastItem {
+.oldDroppedItems > .unresolved {
 	border-left-color: #ac2925;
 }
-
-.todayGroup > .list-group-item > .resolutionButton {
-	float: right;
-	
-}
-
-
-
-
 
