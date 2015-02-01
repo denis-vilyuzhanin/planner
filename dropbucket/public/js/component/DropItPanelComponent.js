@@ -1,5 +1,5 @@
 
-define(['text!dropIt.panel.html'], function(template) {
+define(['text!DropItPanel.component.html'], function(template) {
 	var DROPPED_ITEM_EVENT = 'droppedItemEvent';
 	var DROP_IT_PANEL_SELECTOR = '.dropItPanel';
 	var DESCRIPTION_INPUT_SELECTOR = '.descriptionInput'; 
