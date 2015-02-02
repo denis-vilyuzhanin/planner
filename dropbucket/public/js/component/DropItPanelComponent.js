@@ -18,7 +18,6 @@ define(['text!DropItPanel.component.html'], function(template) {
 				.keypress(_.bind(this.handleKeyPressedOnDescriptionInput, this));
 			this.$el.find(DROP_IT_BUTTON_SELECTOR)
 				.click(_.bind(this.fireDroppedItemEvent, this));
-			
 			return this;
 		},
 		
@@ -32,11 +31,12 @@ define(['text!DropItPanel.component.html'], function(template) {
 			var $input = this.$el.find(DESCRIPTION_INPUT_SELECTOR);
 			var value = $input.val();
 			this.trigger(DROPPED_ITEM_EVENT, value);
+			this.model.inputNewItemDescription(value);
 			$input.val('');
 		},
 		
-		onDroppedItem: function(listener) {
-			this.on(DROPPED_ITEM_EVENT, listener);
+		onDroppedItem: function(listener, context) {
+			this.on(DROPPED_ITEM_EVENT, listener, context);
 		}
 	});
 });

@@ -1,26 +1,16 @@
 define(['../component/DropItPanelComponent', 
         '../component/DroppedItemsListComponent',
-        '../model/DroppedItemsListModel',
         'text!dropbucket.view.html'], 
 		function(DropItPanelComponent, 
 				 DroppedItemsListComponent, 
-				 DroppedItemsListModel,
 				 template){
 	return Backbone.View.extend({
 		
 		initialize: function() {
 			this.setElement($('body'));
-			this.dropItPanel = new DropItPanelComponent();
-			this.dropItPanel.onDroppedItem(_.bind(function(message){
-				if (_.isEmpty(message)) {
-					return;
-				}
-				this.newItems.model.add([{value: message}]);
-			}, this));
+			this.dropItPanel = new DropItPanelComponent({model: this.model.getNewItemModel()});
+			this.newItems = new DroppedItemsListComponent({model: this.model.getTodayDroppedItems()});
 			
-			this.newItems = new DroppedItemsListComponent({
-				model: new DroppedItemsListModel()
-			});
 		},
 		render: function() {
 			this.$el.html(template);
