@@ -7,9 +7,15 @@ define(['../component/DropItPanelComponent',
 		initialize: function() {
 			this.setElement($('body'));
 			this.dropItPanel = new DropItPanelComponent();
-			this.dropItPanel.onDroppedItem(function(msg){
-				alert(msg);
-			});
+			this.dropItPanel.onDroppedItem(_.bind(function(message){
+				if (_.isEmpty(message)) {
+					return;
+				}
+				this.newItems.addItem({
+					id: 0,
+					value: message
+				})
+			}, this));
 			
 			this.newItems = new DroppedItemsListComponent();
 		},

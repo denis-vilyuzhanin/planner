@@ -19,8 +19,6 @@
 }
 
 
-
-
 .droppedItems > .list-group-item {
 	border-left-width: 5px;
 	height: 55px;
@@ -32,9 +30,7 @@
 	background-color: #eee;
 }
 
-.droppedItems .resolutionButton {
-	float: right;
-}
+
 
 .todayDroppedItems > .unresolved {
 	border-left-color: #398439;
@@ -47,4 +43,17 @@
 .oldDroppedItems > .unresolved {
 	border-left-color: #ac2925;
 }
+
+.droppedItems .resolveItButton {
+	display: none;	
+}
+
+.droppedItems .unresolved:HOVER .resolveItButton {
+	display: inline;
+} 
+
+.droppedItems .resolveItButton {
+	float: right;
+}
+
 
