@@ -4,6 +4,11 @@ define(['text!DroppedItemsList.component.html'], function(template){
 	
 	return Backbone.View.extend({
 		
+		
+		initialize: function() {
+			this.model.on('change reset add remove', this.renderItems, this);
+		},
+		
 		render: function() {
 			this.$el = $listTemplate.clone();
 			this.$el.on('click', '.manualResolution', _.bind(function(e){
@@ -13,10 +18,17 @@ define(['text!DroppedItemsList.component.html'], function(template){
 			return this;
 		},
 		
+		renderItems: function() {
+			this.$el.empty();
+			this.model.each(function(droppedItem){
+				this.addItem(droppedItem);
+			}, this);
+		},
+		
 		addItem: function(item) {
 			var $newItem = $itemTemplate.clone();
 			$newItem.attr('itemId', item.id);
-			$newItem.find('.description').text(item.value);
+			$newItem.find('.description').text(item.get('value'));
 			this.$el.prepend($newItem)
 		}
 	});
