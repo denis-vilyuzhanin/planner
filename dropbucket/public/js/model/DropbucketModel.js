@@ -10,7 +10,7 @@ define(['./NewDroppedItemModel',
 			this.attributes.newItem = new NewDroppedItemModel();
 			this.attributes.todayItems = new DroppedItemsListModel();
 			
-			this.attributes.newItem.on('change', this.userDroppedNewItem, this);
+			this.attributes.newItem.on('change:isDropped', this.userDroppedNewItem, this);
 		},
 		
 		getNewItemModel: function() {

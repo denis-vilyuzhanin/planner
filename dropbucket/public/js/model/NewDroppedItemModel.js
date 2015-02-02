@@ -6,7 +6,11 @@ define([], function(){
 		},
 	
 		inputNewItemDescription: function(itemDescription) {
-			this.set({description: itemDescription});
+			this.attributes.description = itemDescription;
+		},
+		
+		dropItem: function() {
+			this.set({isDropped: true});
 		},
 		
 		getNewItemDescription: function() {

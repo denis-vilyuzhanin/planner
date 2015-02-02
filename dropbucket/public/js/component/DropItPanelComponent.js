@@ -32,6 +32,7 @@ define(['text!DropItPanel.component.html'], function(template) {
 			var value = $input.val();
 			this.trigger(DROPPED_ITEM_EVENT, value);
 			this.model.inputNewItemDescription(value);
+			this.model.dropItem();
 			$input.val('');
 		},
 		
