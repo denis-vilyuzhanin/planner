@@ -28,7 +28,7 @@ define(['text!DroppedItemsList.component.html'], function(template){
 		addItem: function(item) {
 			var $newItem = $itemTemplate.clone();
 			$newItem.attr('itemId', item.id);
-			$newItem.find('.description').text(item.get('value'));
+			$newItem.find('.description').text(item.getDescription());
 			this.$el.prepend($newItem)
 		}
 	});
