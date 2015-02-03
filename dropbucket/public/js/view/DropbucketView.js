@@ -20,6 +20,7 @@ define(['../component/DropItPanelComponent',
 			
 			this.newItems.render();
 			this.$el.find('.droppedItemsContainer').append(this.newItems.$el);
-		}
+		},
+		
 	});
 });

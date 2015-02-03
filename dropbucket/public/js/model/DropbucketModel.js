@@ -24,8 +24,10 @@ define(['./NewDroppedItemModel',
 			if (!this.getNewItemModel().isDropped()) {
 				return;
 			}
-			this.getTodayDroppedItems().dropNewItem(new DroppedItemModel(this.getNewItemModel()));
+			var newItem = this.getNewItemModel().convertToDroppedItem();
+			this.getTodayDroppedItems().dropNewItem(newItem);
 			this.getNewItemModel().clear();
+			newItem.save();
 		}
 	});
 });

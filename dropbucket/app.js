@@ -9,4 +9,5 @@ exports.init = function(app){
 	});
 	app.use("/dropbucket/", express.static(path.join(__dirname, 'public')));
 	
+	require('./services/dropbucketService').init(app);
 };

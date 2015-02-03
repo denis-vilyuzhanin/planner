@@ -1,9 +1,8 @@
 define([], function(){
 	return Backbone.Model.extend({
+		url: './api/dropped-item',
 		
-		initialize: function(conf) {
-			this.attributes.description = conf.getNewItemDescription();
-		},
+		
 		getDescription: function() {
 			return this.attributes.description;
 		},

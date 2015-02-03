@@ -1,4 +1,4 @@
-define([], function(){
+define(['./DroppedItemModel'], function(DroppedItemModel){
 	return Backbone.Model.extend({
 		
 		onDropNewItem: function(listener, context) {
@@ -21,5 +21,10 @@ define([], function(){
 			return this.attributes.description;
 		},
 		
+		convertToDroppedItem: function() {
+			return new DroppedItemModel({
+				description: this.getNewItemDescription()
+			});
+		}
 	});
 });
