@@ -1,4 +1,4 @@
-var fs = require('fs');
+var fsUtils = require('./fsUtils');
 
 module.exports = Repository;
 function Repository(params) {
@@ -6,21 +6,7 @@ function Repository(params) {
 }
 
 Repository.prototype.init = function(callback) {
-	var path = this._repositoryDir;
-	
-	fs.exists(path, function(exists) {
-		if (!exists) {
-			fs.mkdir(path, function(err){
-				if (err) {
-					callback.error(err);
-				} else {
-					callback.success();
-				}
-			});
-		} else {
-			callback.success();
-		}
-	});
+	fsUtils.createFolderIfnotExist(this._repositoryDir, callback);
 }
 
 Repository.prototype.newEventLog = function() {
