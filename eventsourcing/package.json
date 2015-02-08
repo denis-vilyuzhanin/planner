@@ -1,0 +1,10 @@
+{
+  "name": "eventsourcing",
+  "description": "Event sourcing framework",
+  "version": "0.0.1",
+  "main": "eventsourcing.js",
+  "dependencies": {
+	  "nodeunit": "0.9.0"
+  }
+
+}

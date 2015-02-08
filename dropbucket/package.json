@@ -8,6 +8,7 @@
   "dependencies": {
     "express": "3.2.6",
     "ejs": "*",
-    "date-util": "1.2.1"
+    "date-util": "1.2.1",
+    "eventsourcing": "file:../eventsourcing"
   }
 }
