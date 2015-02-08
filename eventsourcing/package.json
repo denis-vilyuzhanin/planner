@@ -5,6 +5,9 @@
   "main": "eventsourcing.js",
   "dependencies": {
 	  "nodeunit": "0.9.0"
+  },
+  "devDependencies": {
+	  "temp": "0.8.1"
   }
 
 }
