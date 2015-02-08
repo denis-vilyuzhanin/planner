@@ -17,6 +17,8 @@ Repository.prototype.init = function(callback) {
 					callback.success();
 				}
 			});
+		} else {
+			callback.success();
 		}
 	});
 }
