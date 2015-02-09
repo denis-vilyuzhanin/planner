@@ -1,4 +1,6 @@
 
+var deepEqual = require('deep-equal')
+
 exports.createNew = createNewEvent;
 function createNewEvent(type, data) {
 	var currentDate = new Date();
@@ -63,3 +65,6 @@ Event.prototype.toJson = function() {
 	});
 }
 
+Event.prototype.equal = function(other) {
+	return deepEqual(this, other);
+}

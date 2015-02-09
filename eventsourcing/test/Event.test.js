@@ -50,3 +50,15 @@ exports.json = {
 	}
 }
 
+exports.equal = {
+	equals: function(test) {
+		//given
+		var event1 = Event.createNew(ANY_TYPE, ANY_DATA);
+		var event2 = Event.parseJson(event1.toJson());
+		//when
+		var isEqual = event1.equal(event2);
+		//then
+		test.ok(isEqual);
+		test.done();
+	}
+}

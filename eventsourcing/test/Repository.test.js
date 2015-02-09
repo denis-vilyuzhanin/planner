@@ -12,7 +12,7 @@ exports.setUp = function(callback) {
 
 exports.tearDown = function(callback) {
 	temp.cleanupSync();
-	 callback();
+	callback();
 };
 
 exports.init = {
