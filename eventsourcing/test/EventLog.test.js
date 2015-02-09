@@ -2,7 +2,12 @@
 var temp = require('temp');
 var fs = require('fs');
 var path = require('path');
+
 var EventLog = require('../js/EventLog');
+var Event = require('../js/Event');
+
+var eventLog;
+var ANY_EVENT = Event.createNew("anyEvent", {anyField: 'anyValue'});
 
 exports.setUp = function(callback) {
 	temp.track();
@@ -37,7 +42,7 @@ exports.createNew = {
 	},
 	uniqueId: function(test) {
 		//given
-		var ANY_CONFIG = {workingDir: temp.mkdirSync()};
+		var ANY_CONFIG = {workingDir: temp.mkdirSync()};		
 		var callback = {
 			success: thenIdsIsDifferent,
 			error: function(e) {
@@ -64,3 +69,24 @@ exports.createNew = {
 	
 }
 
+
+exports.append = {
+	setUp: function(callback) {
+		eventLog = new EventLog({workingDir: temp.mkdirSync()});
+		firstEventLog.initNew({
+			success: function() {
+				callback();
+			},
+			error: function(e) {
+				console.log(e);
+			}
+		});
+	},
+	appendFirst: function(test) {
+		//given
+		var event = ANY_EVENT;
+		//when
+		eventLog.append(event);
+		test.done();
+	}
+}
