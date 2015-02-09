@@ -10,6 +10,17 @@ function createNewEvent(type, data) {
 	});
 }
 
+exports.parseJson = parseJson;
+function parseJson(json) {
+	var eventData = JSON.parse(json);
+	return new Event({
+		id: eventData.id,
+		type: eventData.type,
+		createDate: new Date(eventData.createDate),
+		data: eventData.data
+	});
+}
+
 function generateEventId() {
 	var random = Math.random().toString().substring(2);
 	return createEventId(new Date(), random);
@@ -29,5 +40,26 @@ function Event(params) {
 }
 Event.prototype.id = function() {
 	return this._id;
+}
+
+Event.prototype.type = function() {
+	return this._type;
+}
+
+Event.prototype.data = function() {
+	return this._data;
+}
+
+Event.prototype.createDate = function() {
+	return this._createDate;
+}
+
+Event.prototype.toJson = function() {
+	return JSON.stringify({
+		id: this._id,
+		type: this._type,
+		createDate: this._createDate.toISOString(),
+		data: this._data
+	});
 }
 
