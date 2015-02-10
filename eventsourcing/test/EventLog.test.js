@@ -73,7 +73,7 @@ exports.createNew = {
 exports.append = {
 	setUp: function(callback) {
 		eventLog = new EventLog({workingDir: temp.mkdirSync()});
-		firstEventLog.initNew({
+		eventLog.initNew({
 			success: function() {
 				callback();
 			},
@@ -86,7 +86,11 @@ exports.append = {
 		//given
 		var event = ANY_EVENT;
 		//when
-		eventLog.append(event);
-		test.done();
+		eventLog.append(event, {
+			success: function() {
+				test.ok(fs.existsSync(path.join(eventLog._path, event.id() + '.event.json')));
+				test.done();
+			}
+		});
 	}
 }
