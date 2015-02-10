@@ -65,6 +65,6 @@ Event.prototype.toJson = function() {
 	});
 }
 
-Event.prototype.equal = function(other) {
+Event.prototype.deepEqual = function(other) {
 	return deepEqual(this, other);
 }

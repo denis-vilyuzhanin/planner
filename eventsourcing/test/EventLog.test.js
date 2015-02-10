@@ -9,6 +9,13 @@ var Event = require('../js/Event');
 var eventLog;
 var ANY_EVENT = Event.createNew("anyEvent", {anyField: 'anyValue'});
 
+var ANY_EVENTS = [];
+for(var i = 0; i < 4; i++) {
+	ANY_EVENTS.push(Event.createNew("anyEvent", {anyOtherField: 'anyOtherValue' + i}));
+}
+ANY_EVENTS.sort(function(a, b){return a.id() > b.id() ? 1 : (a.id() == b.id() ? 0 : -1)});
+
+
 exports.setUp = function(callback) {
 	temp.track();
 	 callback();
@@ -82,7 +89,8 @@ exports.append = {
 			}
 		});
 	},
-	appendFirst: function(test) {
+	storeEventInFile: function(test) {
+		test.expect(1);
 		//given
 		var event = ANY_EVENT;
 		//when
@@ -92,5 +100,21 @@ exports.append = {
 				test.done();
 			}
 		});
+	},
+	readAllEventsInNaturalOrder: function(test) {
+		//given
+		var firstEvent = ANY_EVENTS[0];
+		var secondEvent = ANY_EVENTS[0];
+		//when
+		eventLog.append(firstEvent);
+		eventLog.append(secondEvent, {
+			success: readAndCheckOrder
+		});
+		//then
+		function readAndCheckOrder() {
+			test.done();
+		}
 	}
 }
+
+
