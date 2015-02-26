@@ -104,15 +104,28 @@ exports.append = {
 	readAllEventsInNaturalOrder: function(test) {
 		//given
 		var firstEvent = ANY_EVENTS[0];
-		var secondEvent = ANY_EVENTS[0];
+		var secondEvent = ANY_EVENTS[1];
 		//when
-		eventLog.append(firstEvent);
-		eventLog.append(secondEvent, {
-			success: readAndCheckOrder
-		});
+		appendFirstEvent();
+		
+		function appendFirstEvent() {
+			eventLog.append(firstEvent, {
+				success: appendSecondEvent
+			});
+		}
+		function appendSecondEvent() {
+			eventLog.append(secondEvent, {
+				success: readAndCheckOrder
+			});
+		}
 		//then
 		function readAndCheckOrder() {
-			test.done();
+			eventLog.readAll({
+				success: function(list) {
+					test.deepEqual(list, [firstEvent, secondEvent]);
+					test.done();
+				}
+			});
 		}
 	}
 }

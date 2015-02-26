@@ -40,5 +40,11 @@ EventLog.prototype.id = function() {
 	return this._id;
 }
 
+EventLog.prototype.readAll = function(callback) {
+	setTimeout(function(){
+		callback.success([]);
+	});
+}
+
 
 
